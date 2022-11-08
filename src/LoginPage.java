@@ -12,7 +12,9 @@ public class LoginPage
     private void login()
     {
         String username, password;
-        System.out.println("================ LOGIN ================");
+        System.out.println("=======================================");
+        System.out.println("                 LOGIN                 ");
+        System.out.println("=======================================");
         System.out.print("USERNAME : ");
         username = input.nextLine();
         System.out.print("PASSWORD : ");
@@ -31,7 +33,6 @@ public class LoginPage
     private void loginGagal()
     {
         System.out.println("---------------------------------------");
-        System.out.println("------------- LOGIN GAGAL -------------");
         System.out.println("     USERNAME ATAU PASSWORD SALAH!     ");
         System.out.println("---------------------------------------");
     }

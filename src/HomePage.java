@@ -11,15 +11,18 @@ public class HomePage
 
     private void initialPage()
     {
-        System.out.println("--------- BANKING ---------");
         int menu;
         do
         {
+            System.out.println("=======================================");
+            System.out.println("           APLIKASI  BANKING           ");
+            System.out.println("=======================================");
             System.out.print("""
                     [1] LOGIN
                     [2] DAFTAR REKENING
                     [0] KELUAR
                     """);
+            System.out.println("---------------------------------------");
             System.out.print("PILIH MENU : ");
             menu = input.nextInt();
             input.nextLine();
