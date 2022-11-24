@@ -13,7 +13,7 @@ public class LoginPage
     {
         String username, password;
         System.out.println("=======================================");
-        System.out.println("                 LOGIN                 ");
+        System.out.println("               L O G I N               ");
         System.out.println("=======================================");
         System.out.print("USERNAME : ");
         username = input.nextLine();
@@ -22,7 +22,7 @@ public class LoginPage
 
         if(Auth.login(username, password))
         {
-            System.out.println("LOGIN BERHASIL...");
+            new HomePage();
         }
         else
         {

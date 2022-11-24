@@ -10,7 +10,7 @@ public class Auth
     // =-=-=-=-=-=-=-=-=-=-   I N I T I A L   U S E R   -=-=-=-=-=-=-=-=-=-=
     public static void initialUser()
     {
-        User user = new User("admin", "-", "-",
+        User user = new User("ADMIN", "-", "-",
          "-", "admin123", "admin");
 
         Rekening rekening = new Rekening("0123456789", "123456");
@@ -97,6 +97,44 @@ public class Auth
     public static void cariRekening(String rekening)
     {
     }
+    
+    // =-=-=-=-=-=-=-=-=-=-   E D I T   D A T A   U S E R   -=-=-=-=-=-=-=-=-=-=
+    public static void editNoTelp(String noTelp)
+    {
+        if(cekNoTelp(noTelp))
+        {
+            userLogged.setNoTelp(noTelp);
+        }
+        else
+        {
+            System.out.println("---------------------------------------");
+            System.out.println("     NOMOR TELEPON SUDAH TERDAFTAR     ");   
+        }
+    }
+
+    public static void editEmail(String email)
+    {
+        if(cekEmail(email))
+        {
+            userLogged.setEmail(email);
+        }
+        else
+        {
+            System.out.println("---------------------------------------");
+            System.out.println("         EMAIL SUDAH TERDAFTAR         ");   
+        }
+    }
+
+    public static void editUsername(String username)
+    {
+        userLogged.setUsername(username);
+    }
+
+    public static void editPassword(String password)
+    {
+        userLogged.setPassword(password);
+    }
+
 
     public static void logout()
     {

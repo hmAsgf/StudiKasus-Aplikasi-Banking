@@ -20,6 +20,22 @@ public class User
         this.rekening = rekening;
     }
 
+    public void setNoTelp(String noTelp) {
+        this.noTelp = noTelp;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public void dataUser()
     {
         System.out.println("NAMA           : " + nama);
