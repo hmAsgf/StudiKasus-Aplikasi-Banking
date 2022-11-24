@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class HomePage
+public class StartPage
 {
     private Scanner input = new Scanner(System.in);
 
-    public HomePage()
+    public StartPage()
     {
         initialPage();
     }
