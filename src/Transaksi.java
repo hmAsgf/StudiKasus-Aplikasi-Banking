@@ -4,13 +4,11 @@ public class Transaksi
     String jenisTransaksi;
     String tanggalTransaksi;
     String nominalTransaksi;
-    String totalBayar;
 
-    public Transaksi(String jenisTransaksi, String nominalTransaksi, String totalBayar)
+    public Transaksi(String jenisTransaksi, String nominalTransaksi)
     {
         this.jenisTransaksi = jenisTransaksi;
         this.nominalTransaksi = nominalTransaksi;
-        this.totalBayar = totalBayar;
         tanggalTransaksi = DateString.now();
     }
 
