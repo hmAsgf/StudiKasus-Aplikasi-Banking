@@ -21,7 +21,8 @@ public class HomePage
                                 [2] SETOR TUNAI
                                 [3] TARIK TUNAI
                                 [4] TRANSFER
-                                [5] RIWAYAT TRANSAKSI
+                                [5] CEK SALDO
+                                [6] RIWAYAT TRANSAKSI
                                 [0] LOGOUT""");
             System.out.println("---------------------------------------");
             System.out.print("PILIH MENU : ");

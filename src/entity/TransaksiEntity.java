@@ -3,13 +3,13 @@ package entity;
 import utils.DateString;
 
 // CLASS ENTITAS
-public class TransaksiEntity
+public abstract class TransaksiEntity
 {
     private String jenisTransaksi;
     private String tanggalTransaksi;
-    private String nominalTransaksi;
+    private int nominalTransaksi;
 
-    public TransaksiEntity(String jenisTransaksi, String nominalTransaksi)
+    public TransaksiEntity(String jenisTransaksi, int nominalTransaksi)
     {
         this.jenisTransaksi = jenisTransaksi;
         this.nominalTransaksi = nominalTransaksi;
@@ -18,8 +18,11 @@ public class TransaksiEntity
 
     public void dataTransaksi()
     {
+        System.out.println("---------------------------------------");
         System.out.println("JENIS TRANSAKSI     : " + this.jenisTransaksi);
         System.out.println("TANGGAL TRANSAKSI   : " + this.tanggalTransaksi);
         System.out.println("NOMINAL TRANSAKSI   : " + this.nominalTransaksi);
     }
+
+    public abstract int getNominalTransaksi();
 }

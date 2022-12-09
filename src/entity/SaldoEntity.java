@@ -11,26 +11,10 @@ public class SaldoEntity
 
     public void ambilSaldo(int nominal)
     {
-        if(jumlahSaldo >= nominal)
-        {
-            jumlahSaldo -= nominal;
-        }
-        else
-        {
-            System.out.println("SALDO TIDAK CUKUP");
-        }
+        jumlahSaldo -= nominal;
     }
 
     public int getJumlahSaldo() {
         return jumlahSaldo;
-    }
-
-    public void setJumlahSaldo(int jumlahSaldo) {
-        this.jumlahSaldo = jumlahSaldo;
-    }
-
-    public void dataSaldo()
-    {
-        System.out.println("SALDO           : " + jumlahSaldo);
     }
 }

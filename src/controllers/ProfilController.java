@@ -21,7 +21,7 @@ public class ProfilController
     {
         if(registrasiC.cekNoTelp(noTelp))
         {
-            UserModel.updateNoTelp(noTelp);
+            UserModel.getUserLogged().setNoTelp(noTelp);
             return true;
         }
 
@@ -32,7 +32,7 @@ public class ProfilController
     {
         if(registrasiC.cekEmail(email))
         {
-            UserModel.updateEmail(email);
+            UserModel.getUserLogged().setEmail(email);
             return true;
         }
 
@@ -41,7 +41,7 @@ public class ProfilController
 
     public void editUsername(String username)
     {
-        UserModel.updateUsername(username);
+        UserModel.getUserLogged().setUsername(username);
     }
 
     public int editPassword(String passwordLama, String passwordBaru , String konfirmasiPassword)
@@ -50,7 +50,7 @@ public class ProfilController
         {
             if(passwordBaru.equals(konfirmasiPassword))
             {
-                UserModel.updatePassword(konfirmasiPassword);
+                UserModel.getUserLogged().setPassword(konfirmasiPassword);
                 return 1;
             }
             else

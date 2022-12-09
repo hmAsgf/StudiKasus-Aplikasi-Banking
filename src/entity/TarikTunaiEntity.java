@@ -6,7 +6,12 @@ public class TarikTunaiEntity extends TransaksiEntity
 
     public TarikTunaiEntity(int nominalTarik)
     {
-        super("Tarik Tunai", String.valueOf(nominalTarik));
+        super("Tarik Tunai", nominalTarik);
         this.nominalTarik = nominalTarik;
+    }
+
+    @Override
+    public int getNominalTransaksi() {
+        return nominalTarik;
     }
 }

@@ -32,36 +32,17 @@ public class UserModel
         UserModel.userLogged = userLogged;
     }
 
-    public static void updateNoTelp(String noTelp)
+    public static UserEntity cariRekening(String rekening)
     {
-        if(userLogged != null)
+        for(UserEntity user : userList)
         {
-            userLogged.setNoTelp(noTelp);
+            if(user.getRekening().getNoRekening().equals(rekening))
+            {
+                return user;
+            }
         }
-    }
 
-    public static void updateEmail(String email)
-    {
-        if(userLogged != null)
-        {
-            userLogged.setEmail(email);
-        }
-    }
-
-    public static void updateUsername(String username)
-    {
-        if(userLogged != null)
-        {
-            userLogged.setUsername(username);
-        }
-    }
-
-    public static void updatePassword(String password)
-    {
-        if(userLogged != null)
-        {
-            userLogged.setPassword(password);
-        }
+        return null;
     }
 
     public static void buatAkun(UserEntity user, RekeningEntity rekening)

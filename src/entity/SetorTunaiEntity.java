@@ -6,7 +6,12 @@ public class SetorTunaiEntity extends TransaksiEntity
 
     public SetorTunaiEntity(int nominalSetor)
     {
-        super("Setor Tunai", String.valueOf(nominalSetor));
+        super("Setor Tunai", nominalSetor);
         this.nominalSetor = nominalSetor;
+    }
+
+    @Override
+    public int getNominalTransaksi() {
+        return nominalSetor;
     }
 }
