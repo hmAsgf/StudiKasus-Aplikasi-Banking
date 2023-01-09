@@ -1,15 +1,17 @@
 package controllers;
-import views.ProfilPage;
+import views.ProfilFrame;
+import entity.UserEntity;
 import models.UserModel;
 
 public class ProfilController
 {
     private RegistrasiController registrasiC = new RegistrasiController();
 
+    public UserEntity user = UserModel.getUserLogged();
+
     public void toView()
     {
-        ProfilPage profilPage = new ProfilPage();
-        profilPage.initialPage();
+        new ProfilFrame().setVisible(true);
     }
 
     public void tampilData()

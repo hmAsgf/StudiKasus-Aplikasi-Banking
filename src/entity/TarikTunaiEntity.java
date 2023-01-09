@@ -4,9 +4,9 @@ public class TarikTunaiEntity extends TransaksiEntity
 {
     private int nominalTarik;
 
-    public TarikTunaiEntity(int nominalTarik)
+    public TarikTunaiEntity(int nominalTarik, int saldo)
     {
-        super("Tarik Tunai", nominalTarik);
+        super("Tarik Tunai", nominalTarik, saldo);
         this.nominalTarik = nominalTarik;
     }
 

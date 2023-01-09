@@ -4,9 +4,9 @@ public class SetorTunaiEntity extends TransaksiEntity
 {
     private int nominalSetor;
 
-    public SetorTunaiEntity(int nominalSetor)
+    public SetorTunaiEntity(int nominalSetor, int saldo)
     {
-        super("Setor Tunai", nominalSetor);
+        super("Setor Tunai", nominalSetor, saldo);
         this.nominalSetor = nominalSetor;
     }
 

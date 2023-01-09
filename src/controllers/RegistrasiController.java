@@ -1,6 +1,6 @@
 package controllers;
 import models.UserModel;
-import views.RegistrasiPage;
+import views.RegistrasiFrame;
 import entity.UserEntity;
 import entity.RekeningEntity;
 import utils.RandomNumString;
@@ -11,8 +11,7 @@ public class RegistrasiController
 
     public void toView()
     {
-        RegistrasiPage registrasiPage = new RegistrasiPage();
-        registrasiPage.initialPage();
+        new RegistrasiFrame().setVisible(true);
     }
 
     public boolean cekPassword(String pass, String konfPass)

@@ -1,6 +1,6 @@
 package controllers;
 import entity.UserEntity;
-import views.LoginPage;
+import views.LoginFrame;
 import models.UserModel;
 
 public class LoginController
@@ -8,8 +8,7 @@ public class LoginController
 
     public void toView()
     {
-        LoginPage loginPage = new LoginPage();
-        loginPage.initialPage();
+        new LoginFrame().setVisible(true);
     }
 
     public boolean prosesLogin(String username, String password)
@@ -19,8 +18,6 @@ public class LoginController
             if((user.getUsername().equals(username)) && (user.getPassword().equals(password)))
             {
                 UserModel.setUserLogged(user);
-                HomeController homeC = new HomeController();
-                homeC.toView();
                 return true;
             }
         }

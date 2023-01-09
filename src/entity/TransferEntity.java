@@ -6,9 +6,9 @@ public class TransferEntity extends TransaksiEntity
     private UserEntity userAsal;
     private UserEntity userTujuan;
 
-    public TransferEntity(int nominal, UserEntity userAsal, UserEntity userTujuan)
+    public TransferEntity(int nominal, UserEntity userAsal, UserEntity userTujuan, int saldo)
     {
-        super("Transfer", nominal);
+        super("Transfer", nominal, saldo);
         this.nominalTrasfer = nominal;
         this.userAsal = userAsal;
         this.userTujuan = userTujuan;

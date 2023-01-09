@@ -1,6 +1,6 @@
 package controllers;
 import models.UserModel;
-import views.VerifikasiPinPage;
+import views.VerifikasiPinFrame;
 
 public class VerifPinController
 {
@@ -13,8 +13,7 @@ public class VerifPinController
 
     public void toView()
     {
-        VerifikasiPinPage verifikasiPinPage = new VerifikasiPinPage(transaksi);
-        verifikasiPinPage.initialPage();
+        new VerifikasiPinFrame(transaksi).setVisible(true);
     }
 
     public boolean cekPin(String pin)
@@ -31,18 +30,15 @@ public class VerifPinController
     {
         if(transaksi.equals("Setor Tunai"))
         {
-            SetorTunaiController setorTunaiC = new SetorTunaiController();
-            setorTunaiC.toView();
+            new SetorTunaiController().toView();
         }
         else if(transaksi.equals("Tarik Tunai"))
         {
-            TarikTunaiController tarikTunaiC = new TarikTunaiController();
-            tarikTunaiC.toView();
+            new TarikTunaiController().toView();
         }
         if(transaksi.equals("Transfer"))
         {
-            TransferController transferC = new TransferController();
-            transferC.toView();
+            new TransferController().toView();
         }
     }
 }

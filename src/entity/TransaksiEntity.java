@@ -8,11 +8,13 @@ public abstract class TransaksiEntity
     private String jenisTransaksi;
     private String tanggalTransaksi;
     private int nominalTransaksi;
+    private int saldo;
 
-    public TransaksiEntity(String jenisTransaksi, int nominalTransaksi)
+    public TransaksiEntity(String jenisTransaksi, int nominalTransaksi, int saldo)
     {
         this.jenisTransaksi = jenisTransaksi;
         this.nominalTransaksi = nominalTransaksi;
+        this.saldo = saldo;
         tanggalTransaksi = DateString.now();
     }
 
@@ -25,4 +27,24 @@ public abstract class TransaksiEntity
     }
 
     public abstract int getNominalTransaksi();
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public String getJenisTransaksi() {
+        return jenisTransaksi;
+    }
+
+    public void incJenisTransaksi(String jenisTransaksi) {
+        this.jenisTransaksi += jenisTransaksi;
+    }
+
+    public String getTanggalTransaksi() {
+        return tanggalTransaksi;
+    }
+
+    public void setTanggalTransaksi(String tanggalTransaksi) {
+        this.tanggalTransaksi = tanggalTransaksi;
+    }
 }

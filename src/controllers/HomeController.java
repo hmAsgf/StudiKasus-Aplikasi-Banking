@@ -1,13 +1,14 @@
 package controllers;
 import models.UserModel;
-import views.HomePage;
+import views.HomeFrame;
 
 public class HomeController
 {
+    public String namaLengkap = UserModel.getUserLogged().getNama();
+
     public void toView()
     {
-        HomePage homePage = new HomePage();
-        homePage.initialPage();
+        new HomeFrame().setVisible(true);
     }
     
     public void switchMenu(int menu)
@@ -40,6 +41,8 @@ public class HomeController
                 break;
             case 0:
                 UserModel.setUserLogged(null);
+                LoginController loginC = new LoginController();
+                loginC.toView();
                 break;
             default:
                 break;

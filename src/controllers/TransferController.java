@@ -3,7 +3,7 @@ import entity.TransaksiEntity;
 import entity.TransferEntity;
 import entity.UserEntity;
 import models.UserModel;
-import views.TransferPage;
+import views.TransferFrame;
 
 public class TransferController
 {
@@ -12,17 +12,35 @@ public class TransferController
 
     public void toView()
     {
-        TransferPage transferPage = new TransferPage();
-        transferPage.initialPage();
+        new TransferFrame().setVisible(true);
+    }
+
+    public UserEntity getUserTujuan() {
+        return userTujuan;
     }
 
     public void transfer(int nominal)
     {
-        TransaksiEntity transaksi = new TransferEntity(nominal, userAsal, userTujuan);
-        userAsal.getRekening().tambahTransaksi(transaksi);
-        userAsal.getRekening().getSaldo().ambilSaldo(nominal);
+        TransaksiEntity transaksiAsal = new TransferEntity(nominal, userAsal, userTujuan, userAsal.getRekening().getSaldo().getJumlahSaldo());
+        TransaksiEntity transaksiTujuan = new TransferEntity(nominal, userAsal, userTujuan, userTujuan.getRekening().getSaldo().getJumlahSaldo());
+        
+        String rekening = userTujuan.getRekening().getNoRekening();
+        String nama = userTujuan.getNama();
+    
+        transaksiAsal.incJenisTransaksi("/");
+        transaksiAsal.incJenisTransaksi(rekening);
+        transaksiAsal.incJenisTransaksi("/");
+        transaksiAsal.incJenisTransaksi(nama);
+        
+        transaksiTujuan.incJenisTransaksi("/");
+        transaksiTujuan.incJenisTransaksi(rekening);
+        transaksiTujuan.incJenisTransaksi("/");
+        transaksiTujuan.incJenisTransaksi(nama);
 
-        userTujuan.getRekening().tambahTransaksi(transaksi);
+        userAsal.getRekening().tambahTransaksi(transaksiAsal);
+        userAsal.getRekening().getSaldo().ambilSaldo(nominal);
+        
+        userTujuan.getRekening().tambahTransaksi(transaksiTujuan);
         userTujuan.getRekening().getSaldo().tambahSaldo(nominal);
     }
 
@@ -42,7 +60,6 @@ public class TransferController
     {
         if(UserModel.getUserLogged().getRekening().getSaldo().getJumlahSaldo() >= nominal)
         {
-            transfer(nominal);
             return true;
         }
 

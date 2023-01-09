@@ -2,20 +2,22 @@ package controllers;
 
 import entity.SetorTunaiEntity;
 import entity.TransaksiEntity;
+import entity.UserEntity;
 import models.UserModel;
-import views.SetorTunaiPage;
+import views.SetorTunaiFrame;
 
 public class SetorTunaiController
 {
+    private UserEntity user = UserModel.getUserLogged();
+
     public void toView()
     {
-        SetorTunaiPage setorTunaiPage = new SetorTunaiPage();
-        setorTunaiPage.initialPage();
+        new SetorTunaiFrame().setVisible(true);
     }
 
     public boolean cekPin(String pin)
     {
-        if(UserModel.getUserLogged().getRekening().getPin().equals(pin))
+        if(user.getRekening().getPin().equals(pin))
         {
             return true;
         }
@@ -25,7 +27,7 @@ public class SetorTunaiController
 
     public void setorTunai(int nominal)
     {
-        TransaksiEntity transaksi = new SetorTunaiEntity(nominal);
+        TransaksiEntity transaksi = new SetorTunaiEntity(nominal, user.getRekening().getSaldo().getJumlahSaldo());
         UserModel.getUserLogged().getRekening().tambahTransaksi(transaksi);
         UserModel.getUserLogged().getRekening().getSaldo().tambahSaldo(nominal);
     }
